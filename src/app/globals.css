@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-color: #F7F8F6;
+    color: #182B3C;
+  }
+
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #F7F8F6;
+    color: #182B3C;
+  }
+
+  img, video, svg, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Fluid Auto-Fit Container Standard */
+.container-fluid {
+  width: 100%;
+  max-width: min(100% - 2rem, 1280px);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* -------------------------------------------------------------
+   1. ANU KRUPA LASER RUNNING LIGHT BORDERS & MICRO-PHYSICS
+---------------------------------------------------------------- */
+@keyframes laserGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Dark Card with Running Laser Light (Deep Royal Navy + Gold/Emerald shimmer) */
+.laser-card-navy {
+  position: relative;
+  background: #14283F;
+  border-radius: 1rem;
+  z-index: 1;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.laser-card-navy::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: calc(1rem + 1.5px);
+  background: linear-gradient(90deg, #C39A61, #12786F, #F59E0B, #10B981, #C39A61);
+  background-size: 300% 300%;
+  animation: laserGlow 7s ease infinite;
+  z-index: -1;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.laser-card-navy:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.5);
+}
+
+.laser-card-navy:hover::before {
+  opacity: 1;
+  animation-duration: 3.5s;
+}
+
+/* Light Card with Running Laser Light (White + Emerald/Gold shimmer) */
+.laser-card-light {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 1.25rem;
+  z-index: 1;
+  box-shadow: 0 4px 20px -2px rgba(20, 40, 63, 0.05), 0 2px 6px -1px rgba(20, 40, 63, 0.03);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.laser-card-light::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: calc(1.25rem + 1.5px);
+  background: linear-gradient(90deg, #12786F, #C39A61, #0284C7, #10B981, #12786F);
+  background-size: 300% 300%;
+  animation: laserGlow 8s ease infinite;
+  z-index: -1;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+
+.laser-card-light:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px -4px rgba(20, 40, 63, 0.12), 0 4px 12px -2px rgba(20, 40, 63, 0.06);
+}
+
+.laser-card-light:hover::before {
+  opacity: 0.85;
+  animation-duration: 4s;
+}
+
+/* -------------------------------------------------------------
+   2. ORIGINAL BEC1159 24K GOLD & EMERALD GRADIENT BUTTONS
+---------------------------------------------------------------- */
+.btn-gold-original {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #D97706 100%);
+  color: #0F172A !important;
+  font-weight: 800;
+  box-shadow: 0 10px 25px -4px rgba(245, 158, 11, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold-original:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px -4px rgba(245, 158, 11, 0.5);
+}
+
+.btn-gold-original:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+.btn-emerald-original {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: #FFFFFF !important;
+  font-weight: 800;
+  box-shadow: 0 10px 25px -4px rgba(16, 185, 129, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-emerald-original:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px -4px rgba(16, 185, 129, 0.5);
+}
+
+.btn-emerald-original:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Tactile Spring Buttons */
+.btn-tactile {
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.btn-tactile:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+.btn-tactile:active {
+  transform: translateY(1px) scale(0.97);
+}
