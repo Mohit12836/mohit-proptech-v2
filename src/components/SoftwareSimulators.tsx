@@ -163,35 +163,35 @@ export default function SoftwareSimulators() {
                     {col.leads.map((lead, lIdx) => (
                       <div
                         key={lIdx}
-                        className="rounded-xl bg-[#1B3554] border border-white/10 p-3.5 space-y-2 hover:border-[#12786F] transition-colors shadow-sm"
+                        className="rounded-xl bg-white border border-[#E2E8F0] p-3.5 space-y-2 hover:border-[#12786F] hover:shadow-md transition-all text-[#182B3C] shadow-sm"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="font-black text-xs text-white">{lead.name}</span>
+                          <span className="font-black text-xs text-[#182B3C]">{lead.name}</span>
                           <span
                             className={`text-[10px] px-2 py-0.5 rounded font-black uppercase ${
                               lead.score === "Hot"
                                 ? "bg-rose-500 text-white"
                                 : lead.score === "Won"
                                 ? "bg-emerald-600 text-white"
-                                : "bg-[#C39A61] text-[#14283F]"
+                                : "bg-amber-100 text-amber-800 border border-amber-300"
                             }`}
                           >
                             {lead.score}
                           </span>
                         </div>
 
-                        <p className="text-xs text-[#E2E8F0] font-semibold leading-tight">
+                        <p className="text-xs text-[#475569] font-medium leading-tight">
                           {lead.property}
                         </p>
 
-                        <div className="flex items-center justify-between text-xs text-slate-300 pt-2 border-t border-white/10">
-                          <span className="font-black text-[#D4AF7A]">{lead.budget}</span>
-                          <span className="font-medium text-slate-300">{lead.time}</span>
+                        <div className="flex items-center justify-between text-xs pt-2 border-t border-[#E2E8F0]">
+                          <span className="font-black text-amber-700">{lead.budget}</span>
+                          <span className="font-semibold text-[#64748B] text-[11px]">{lead.time}</span>
                         </div>
 
                         <div className="flex items-center gap-2 pt-1">
-                          <button className="flex-1 py-1.5 rounded-lg bg-[#14283F] hover:bg-[#23456D] border border-white/10 text-xs font-bold text-white flex items-center justify-center gap-1 transition-colors">
-                            <Phone className="w-3 h-3 text-[#D4AF7A]" /> Call
+                          <button className="flex-1 py-1.5 rounded-lg bg-[#F1F5F9] hover:bg-[#E2E8F0] border border-[#CBD5E1] text-xs font-bold text-[#182B3C] flex items-center justify-center gap-1 transition-colors">
+                            <Phone className="w-3 h-3 text-amber-600" /> Call
                           </button>
                           <button className="flex-1 py-1.5 rounded-lg bg-[#12786F] hover:bg-[#0E635C] text-xs font-black text-white flex items-center justify-center gap-1 shadow-sm transition-colors">
                             <MessageSquare className="w-3 h-3 fill-white" /> WhatsApp
